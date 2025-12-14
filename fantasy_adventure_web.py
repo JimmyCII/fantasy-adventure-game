@@ -1,5 +1,5 @@
 """
-DnD-Style Text Adventure Game - Web Version
+fantas-Style Text Adventure Game - Web Version
 Host locally using Flask so others can play via browser.
 
 To run:
@@ -20,7 +20,7 @@ import os
 app = Flask(__name__)
 app.secret_key = os.urandom(24)  # For session management
 
-# HTML Template with DnD styling
+# HTML Template with fantasy styling
 HTML_TEMPLATE = """
 <!DOCTYPE html>
 <html>
@@ -250,7 +250,7 @@ def index():
     if not player['game_started']:
         content = """
         <h1>⚔️ REALM OF SHADOWMERE ⚔️</h1>
-        <p class="subtitle">A DnD-Style Text Adventure</p>
+        <p class="subtitle">A Fantasy-Style Text Adventure</p>
             <p class="subtitle">A Fantasy-Style Text Adventure</p>
         
         <div class="game-text">
@@ -717,16 +717,12 @@ def reset():
     session.clear()
     return redirect(url_for('index'))
 
-
 if __name__ == '__main__':
     print("\n" + "="*60)
-    print("🐉 DnD Adventure Game - Web Server")
-        print("🐉 Fantasy Adventure Game - Web Server")
-    print("="*60)
-    print("\nStarting server...")
-    print("\n📍 Local access: http://localhost:5000")
-    print("📍 Network access: http://YOUR_IP:5000")
-    print("\nPress Ctrl+C to stop the server\n")
-    
-    # host='0.0.0.0' allows access from other devices on the network
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    print("🐉 Fantasy Adventure Game - Web Server")
+    print( "="*60)
+    print("🌐 Starting server on http://localhost:5000")
+    print("📱 For network access: http://YOUR_IP:5000")
+    print("🛑 Press Ctrl+C to stop the server")
+    app.run(debug=True, host='0.0.0.0', port=5000)
+
